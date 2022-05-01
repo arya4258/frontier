@@ -2,8 +2,10 @@
   package com.crm.qa.testcases;
   
   import org.testng.Assert; import org.testng.annotations.*;
-  
-  import com.crm.qa.base.TestBase; import com.crm.qa.pages.HomePage; import
+
+import com.frontier.automation.base.TestBase;
+import com.frontier.automation.pageLocators.HomePage;
+import
   com.google.common.base.Verify;
   
   public class FlightTestCases extends TestBase {
@@ -29,8 +31,9 @@
   @Test public void TC004_SelectFlightOption() { homepage.selectFlightOption();
   }
   
-  @AfterSuite(alwaysRun = true) public void tearDown() { // FormatResult();
-  tearDownMain(); }
-  
+  @AfterSuite(alwaysRun = true)
+  public void tearDown() { 
+  tearDownMain(); 
+  }
   }
  
