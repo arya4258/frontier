@@ -1,4 +1,4 @@
-package com.crm.qa.testcases;
+package com.frontier.automation.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
