@@ -6,7 +6,6 @@
 		<!-- <groups> <run> <exclude name = "Functionality" /> </run> </groups> -->
 		<classes>
 			<class name="com.frontier.automation.testcases.FlightTestCases"></class>
-			<class name="com.frontier.automation.testcases.SearchFlightTestCases"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

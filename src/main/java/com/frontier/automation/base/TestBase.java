@@ -14,8 +14,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.log4testng.Logger;
 
+import com.frontier.automation.reports.ExtentReporterNG;
 import com.frontier.automation.utilities.GenericActions;
 import com.frontier.automation.utilities.TestUtils;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class TestBase {
 
@@ -49,6 +52,8 @@ public class TestBase {
 	}
 
 	protected static void initializaton() {
+		ExtentReporterNG.setupExtentReport();
+		ExtentReporterNG.reporter.log(LogStatus.PASS, "In inititializer");
 		String browserName = properties.getProperty("browser");
 		driver = getDriver(browserName);
 
@@ -84,6 +89,8 @@ public class TestBase {
 	}
 
 	public void tearDownMain() {
+		ExtentReporterNG.extentReport.endTest(ExtentReporterNG.reporter);
+		ExtentReporterNG.extentReport.flush();
 		driver.manage().deleteAllCookies();
 		driver.quit();
 	}

@@ -1,6 +1,7 @@
 package com.frontier.automation.reports;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -14,12 +15,26 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
+import com.frontier.automation.utilities.TestUtils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.relevantcodes.extentreports.model.Test;
 
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
+	private LogStatus runStatus;
+	private Test test;
+	public static String reportPath;
+	public static ExtentReports extentReport;
+	public static ExtentTest reporter;
+	
+	public static void setupExtentReport() {
+		String currntTimeStamp= new SimpleDateFormat("yyyy_MM_dd_HH_mm").format(new Date());
+		String reportPath= TestUtils.REPORT_DIR_PATH+File.separator+"Automation_Results_"+currntTimeStamp+".html";
+		extentReport = new ExtentReports(reportPath);
+		reporter= extentReport.startTest("Start test case");
+	}
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outputDirectory) {

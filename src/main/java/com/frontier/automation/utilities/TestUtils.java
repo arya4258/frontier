@@ -22,6 +22,8 @@ public class TestUtils {
 
 	public static final String WORKSAPCE_PATH = System.getProperty("user.dir") + "/src"; // provide path of workspace from your local machine
 
+	public static final String REPORT_DIR_PATH = System.getProperty("user.dir") + "/Automation_result";
+	
 	public static final String SCREENSHOT_PATH = WORKSAPCE_PATH + "//Screenshot//";
 
 	public static final String DateFormat = "yyyyMMddHH:mm:ss";
