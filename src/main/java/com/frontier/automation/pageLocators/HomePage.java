@@ -6,10 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.frontier.automation.base.TestBase;
+import com.frontier.automation.reports.ExtentReporterNG;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class HomePage extends TestBase {
 
 	public HomePage() {
+		ExtentReporterNG.reporter.log(LogStatus.PASS, "In Home page");
 		PageFactory.initElements(driver, this);
 	}
 
